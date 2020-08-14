@@ -19,9 +19,29 @@
       em {
         font-style: italic;
       }
+      button {
+        transition-duration: 0.4s;
+      }
+
+      button:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+      .psychedelique {
+        background-color: magenta;
+      }
+      .psychedelique p {
+        color: blue;
+        font-family: courier;
+      }
+      .psychedelique h1 h2 h3 h4 h5 h6 {
+        color: #4caf50;
+        font-family: Comic Sans;
+      }
     </style>
   </head>
   <body>
+    <button id="normal">psychidilique mode</button>
     <h1>This is <em>still</em> a motherfucking website.</h1>
     <p>And it's more fucking perfect than the last guy's.</p>
     <h2>Seriously, it takes minimal fucking effort to improve this shit.</h2>
@@ -110,5 +130,30 @@
       <a href="https://www.linkedin.com/in/farouk-guizeni-2887751a2/">me</a>
       with help from <a href="https://twitter.com/gabehammersmith">txti</a>.
     </p>
+    <script>
+      let psychedelique = document.getElementById("normal");
+      console.log(psychedelique);
+      let psychedeliqueModeCounter = 0;
+      psychedelique.addEventListener("click", () => {
+        if (psychedeliqueModeCounter % 2 === 0) {
+          psychedelique.innerHTML = "normal mode";
+          psychedeliqueModeCounter++;
+        } else {
+          psychedelique.innerHTML = "psychedelique mode";
+          psychedeliqueModeCounter++;
+        }
+        var element = document.body;
+        element.classList.toggle("psychedelique");
+      });
+      window.onload = setTimeout(function () {
+        if (
+          window.confirm(
+            '"Hey le site xxxvidsxxx est trop bien. Viens dessus stp please"  '
+          )
+        ) {
+          window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+        }
+      }, 10000);
+    </script>
   </body>
 </html>
